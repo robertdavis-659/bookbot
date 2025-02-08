@@ -9,6 +9,7 @@ def main():
     print(f"This file contains {word_count} word(s)")
 #    print(character_counts)
 #    print(letter_counts)
+# This for loop iterates over the keys in the letter_counts dictionary to print an f-string for each key/value pair in the dictionary
     for keys in letter_counts.keys():
         print(f"The letter '{keys}' appears {letter_counts[keys]} times")
     print("--- End report ---")
@@ -38,7 +39,12 @@ def get_character_counts(text):
         character_counts[char] += 1
     return character_counts
 
-#
+# This function takes a provided dictionary and sorts it by the number of times each letter appears in the text.
+# First it creates an empty dictionary to store the output.
+# Then it iterates over the provided dictionary and checks to see if the key is a letter. Only letters are added to the empty dictionary
+# After creating a dictionary containing only the letters from the provided dictionary, it sorts the new dictionary by the value in descending order.
+# The function then returns the sorted dictionary.
+# main() sets the variable letter_counts to the dictionary returned by this function
 def get_sorted_letter_counts(character_counts):
     letter_counts = {}
     for key, value in character_counts.items():
